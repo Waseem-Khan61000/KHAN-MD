@@ -1,8 +1,8 @@
 const config = require('../config')
+const axios = require('axios');
 const { cmd, commands } = require('../command')
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
 const fs = require('fs');
-const axios = require('axios')
 var imgmsg = "*Give me a anime name !*"
 var descgs = "It gives details of given anime name."
 var cants = "I cant find this anime."
@@ -428,3 +428,23 @@ console.log(e)
 reply(`${e}`)
 }
 })
+
+cmd({
+    pattern: "dog",
+    desc: "Fetch a random dog image.",
+    category: "fun",
+    react: "🐶",
+    filename: __filename
+},
+async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+    try {
+        const apiUrl = `https://dog.ceo/api/breeds/image/random`;
+        const response = await axios.get(apiUrl);
+        const data = response.data;
+
+        await conn.sendMessage(from, { image: { url: data.message }, caption: '> *© Powered By KHANX-AI> ' }, { quoted: mek });
+    } catch (e) {
+        console.log(e); // ❯❯ Powered by KHAN-MD 👑
+        reply(`єяяσя ƒєт¢нιηg ∂σg ιмαgє: ${e.message}`);
+    }
+});

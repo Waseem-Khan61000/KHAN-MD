@@ -26,17 +26,19 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ╰━━━━━━━━━━━━━━━┈⊷
 ╭━━〔 *Menu List* 〕━━┈⊷
 ┃◈╭─────────────·๏
-┃◈┃• aimenu
-┃◈┃• anmiemenu
-┃◈┃• convertmenu
-┃◈┃• funmenu
-┃◈┃• dlmenu
-┃◈┃• listcmd
-┃◈┃• mainmenu
-┃◈┃• groupmenu
-┃◈┃• allmenu
-┃◈┃• ownermenu
-┃◈┃• othermenu
+┃◈┃• Quranmenu
+┃◈┃• Prayertime
+┃◈┃• Aimenu
+┃◈┃• Anmiemenu
+┃◈┃• Convertmenu
+┃◈┃• Funmenu
+┃◈┃• Dlmenu
+┃◈┃• Listcmd
+┃◈┃• Mainmenu
+┃◈┃• Groupmenu
+┃◈┃• Allmenu
+┃◈┃• Ownermenu
+┃◈┃• Othermenu
 ┃◈┃• logo <text>
 ┃◈┃• repo
 ┃◈└───────────┈⊷
@@ -64,7 +66,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         // Send audio
         await conn.sendMessage(from, {
-            audio: { url: 'https://github.com/JawadYTX/KHAN-DATA/raw/refs/heads/main/autovoice/sigma.m4a' },
+            audio: { url: 'https://github.com/JawadYTX/KHAN-DATA/raw/refs/heads/main/autovoice/menunew.m4a' },
             mimetype: 'audio/mp4',
             ptt: true
         }, { quoted: mek });
